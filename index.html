@@ -236,15 +236,176 @@ function downloadCV(event){
     window.location.href = pdfUrl;
   }
 }</script>
-<section class="excel-demo" style="padding:40px 20px; text-align:center;">
-    <h2>How to Make an Invoice in Excel</h2>
+<style>
+.video-card{
+  max-width:720px;
+  margin:30px auto;
+  background:#fff;
+  border:1px solid #e8e8e8;
+  border-radius:14px;
+  padding:18px;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
 
-    <p>Step-by-step demonstration of creating a professional invoice in Microsoft Excel.</p>
+.video-card-top{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
 
-    <video controls preload="metadata"
-           style="width:100%; max-width:720px; border-radius:12px;">
-        <source src="excel-invoice-demo-website-hd.mp4" type="video/mp4">
-        Your browser does not support the video.
+.video-icon{
+  width:65px;
+  height:65px;
+  border-radius:12px;
+  background:#F7E7B5;
+  display:grid;
+  place-items:center;
+  font-size:28px;
+  flex-shrink:0;
+}
+
+.video-info{
+  flex:1;
+}
+
+.video-info h3{
+  margin:0 0 5px;
+  font-size:17px;
+  color:#3F3520;
+}
+
+.video-info p{
+  margin:0;
+  color:#756B55;
+  font-size:12px;
+}
+
+.video-play-btn{
+  background:#B8891B;
+  color:#fff;
+  border:0;
+  padding:10px 16px;
+  border-radius:7px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.video-player{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.88);
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.video-player video{
+  width:100%;
+  max-width:1000px;
+  max-height:90vh;
+  border-radius:10px;
+  background:#000;
+}
+
+.video-close{
+  position:absolute;
+  top:18px;
+  right:20px;
+  width:42px;
+  height:42px;
+  border:0;
+  border-radius:50%;
+  background:#fff;
+  color:#333;
+  font-size:25px;
+  cursor:pointer;
+}
+
+@media(max-width:600px){
+  .video-card{
+    margin:25px 0;
+  }
+
+  .video-card-top{
+    gap:10px;
+  }
+
+  .video-icon{
+    width:55px;
+    height:55px;
+    font-size:24px;
+  }
+
+  .video-info h3{
+    font-size:14px;
+  }
+
+  .video-play-btn{
+    padding:9px 11px;
+    font-size:11px;
+  }
+}
+</style>
+
+<section class="excel-demo" style="padding:40px 20px;">
+
+  <div style="text-align:center;">
+    <div class="kicker">Excel Work Sample</div>
+    <h2 class="section-title">Professional Excel Work Sample</h2>
+  </div>
+
+  <div class="video-card">
+
+    <div class="video-card-top">
+
+      <div class="video-icon">▶</div>
+
+      <div class="video-info">
+        <h3>How to Make an Invoice in Excel</h3>
+        <p>Step-by-step professional Excel invoice demonstration</p>
+      </div>
+
+      <button class="video-play-btn" onclick="openVideo()">
+        ▶ Watch
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<div class="video-player" id="videoPlayer">
+
+  <button class="video-close" onclick="closeVideo()">×</button>
+
+  <video id="portfolioVideo" controls playsinline>
+    <source src="1000512479.mp4" type="video/mp4">
+    Your browser does not support the video.
+  </video>
+
+</div>
+
+<script>
+function openVideo(){
+  const player = document.getElementById("videoPlayer");
+  const video = document.getElementById("portfolioVideo");
+
+  player.style.display = "flex";
+  video.play();
+}
+
+function closeVideo(){
+  const player = document.getElementById("videoPlayer");
+  const video = document.getElementById("portfolioVideo");
+
+  video.pause();
+  video.currentTime = 0;
+  player.style.display = "none";
+}
+</script>
     </video>
 </section>
 </body>
