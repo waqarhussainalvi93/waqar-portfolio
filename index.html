@@ -405,6 +405,17 @@ function closeVideo(){
   video.currentTime = 0;
   player.style.display = "none";
 }
+  function openVideoFile(file){
+  const player = document.getElementById("videoPlayer");
+  const video = document.getElementById("portfolioVideo");
+
+  video.pause();
+  video.src = file;
+  video.load();
+
+  player.style.display = "flex";
+  video.play().catch(()=>{});
+  }
 </script>
     </video>
   <div class="video-card">
