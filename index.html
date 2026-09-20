@@ -311,34 +311,18 @@ footer{background:var(--dark);border-top:1px solid #3a3d45;color:#999;padding:18
 
 <script>
 
-const CV_BASE64 = '';
-
-function downloadCV(event){
+<script>
+function downloadCV(event) {
   event.preventDefault();
-  const a=document.createElement('a');
-  a.href='CV.pdf';
-  a.download='Waqar-Hussain-CV.pdf';
+
+  const a = document.createElement("a");
+  a.href = "CV.pdf";
+  a.download = "Waqar-Hussain-CV.pdf";
   document.body.appendChild(a);
   a.click();
   a.remove();
-});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "Waqar_Alvi_CV.pdf";
-    a.style.display = "none";
-    document.body.appendChild(a);
-    a.click();
-    setTimeout(() => {
-      a.remove();
-      URL.revokeObjectURL(url);
-    }, 1500);
-  } catch (err) {
-    // Mobile/browser fallback: open the embedded PDF directly.
-    const pdfUrl = "data:application/pdf;base64," + CV_BASE64.replace(/\s/g, "");
-    window.location.href = pdfUrl;
-  }
-}</script>
+}
+</script>
 <style>
 .video-card{
   max-width:720px;
