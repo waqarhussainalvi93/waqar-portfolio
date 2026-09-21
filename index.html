@@ -27,7 +27,48 @@ function hideAuth(){document.getElementById('authScreen').classList.add('hiddenA
 function authMode(mode){document.getElementById('loginTab').classList.toggle('active',mode==='login');document.getElementById('signupTab').classList.toggle('active',mode==='signup');document.getElementById('authSubmit').textContent=mode==='login'?'Login':'Create Account';document.getElementById('workspaceLabel').style.display=mode==='signup'?'grid':'none';document.getElementById('authForm').dataset.mode=mode}
 async function submitAuth(e){e.preventDefault();if(!cloudReady()){alert('First configure Cloud Setup, or continue in Local Mode.');return}const email=document.getElementById('authEmail').value.trim(),password=document.getElementById('authPassword').value,mode=document.getElementById('authForm').dataset.mode||'login';setAuthMsg('Please wait…');let r=mode==='login'?await sb.auth.signInWithPassword({email,password}):await sb.auth.signUp({email,password});if(r.error)return setAuthMsg(r.error.message);currentUser=r.data.user;if(mode==='signup'&&r.data.session){await createWorkspace(document.getElementById('workspaceName').value.trim()||'My Business');hideAuth()}else if(mode==='signup')setAuthMsg('Account created. Check your email if confirmation is required, then login.');else{await loadProfile();hideAuth();}}
 function setAuthMsg(x){const el=document.getElementById('authMsg');el.style.display='block';el.textContent=x}
-async function loadProfile(){if(!sb||!currentUser)return;const {data,error}=await sb.from('profiles').select('id,full_name,workspace_id,role').eq('id',currentUser.id).maybeSingle();if(error)return;currentProfile=data;if(data?.workspace_id){workspaceId=data.workspace_id;localStorage.setItem('wa_workspace_id',workspaceId);await cloudLoad()}}
+async function loadProfile(){
+  if(!sb||!currentUser)return;
+
+  const {data:profile,error:profileError}=await sb
+    .from('profiles')
+    .select('id,full_name,email')
+    .eq('id',currentUser.id)
+    .maybeSingle();
+
+  if(profileError){
+    console.error(profileError);
+    return;
+  }
+
+  const {data:member,error:memberError}=await sb
+    .from('workspace_members')
+    .select('workspace_id,role')
+    .eq('user_id',currentUser.id)
+    .maybeSingle();
+
+  if(memberError){
+    console.error(memberError);
+    return;
+  }
+
+  if(member?.workspace_id){
+    workspaceId=member.workspace_id;
+    localStorage.setItem('wa_workspace_id',workspaceId);
+
+    currentProfile={
+      ...(profile||{}),
+      workspace_id:member.workspace_id,
+      role:member.role
+    };
+
+    await cloudLoad();
+  }else{
+    currentProfile=profile;
+  }
+
+  updateUserBar();
+   }
 async function createWorkspace(name){const {data,error}=await sb.rpc('create_workspace',{workspace_name:name});if(error){setAuthMsg(error.message);return}workspaceId=data;localStorage.setItem('wa_workspace_id',workspaceId);await loadProfile()}
 async function logout(){if(sb)await sb.auth.signOut();currentUser=null;currentProfile=null;showAuth()}
 function updateUserBar(){const el=document.getElementById('userBar');if(!el)return;el.innerHTML=currentUser?`<span class="cloudBadge">☁ Cloud</span><span class="userMenu">${esc(currentUser.email)} · ${esc(currentProfile?.role||'user')}</span><button class="btn ghost" onclick="logout()">Logout</button>`:`<span class="cloudBadge">Local Mode</span>`}
