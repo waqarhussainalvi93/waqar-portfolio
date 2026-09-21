@@ -25,8 +25,52 @@ async function initAuth(){if(!cloudReady()){document.getElementById('authScreen'
 function showAuth(){document.getElementById('authScreen').classList.remove('hiddenAuth')}
 function hideAuth(){document.getElementById('authScreen').classList.add('hiddenAuth');updateUserBar()}
 function authMode(mode){document.getElementById('loginTab').classList.toggle('active',mode==='login');document.getElementById('signupTab').classList.toggle('active',mode==='signup');document.getElementById('authSubmit').textContent=mode==='login'?'Login':'Create Account';document.getElementById('workspaceLabel').style.display=mode==='signup'?'grid':'none';document.getElementById('authForm').dataset.mode=mode}
-async function submitAuth(e){e.preventDefault();if(!cloudReady()){alert('First configure Cloud Setup, or continue in Local Mode.');return}const email=document.getElementById('authEmail').value.trim(),password=document.getElementById('authPassword').value,mode=document.getElementById('authForm').dataset.mode||'login';setAuthMsg('Please wait…');let r=mode==='login'?await sb.auth.signInWithPassword({email,password}):await sb.auth.signUp({email,password});if(r.error)return setAuthMsg(r.error.message);currentUser=r.data.user;if(mode==='signup'&&r.data.session){await createWorkspace(document.getElementById('workspaceName').value.trim()||'My Business');hideAuth()}else if(mode==='signup')setAuthMsg('Account created. Check your email if confirmation is required, then login.');else{await loadProfile();hideAuth();}}
-function setAuthMsg(x){const el=document.getElementById('authMsg');el.style.display='block';el.textContent=x}
+async function submitAuth(e){
+  e.preventDefault();
+  if(!cloudReady()){
+    alert('First configure Cloud Setup, or continue in Local Mode.');
+    return;
+  }
+
+  const email=document.getElementById('authEmail').value.trim();
+  const password=document.getElementById('authPassword').value;
+  const mode=document.getElementById('authForm').dataset.mode||'login';
+
+  setAuthMsg('Please wait…');
+
+  try{
+    let r=mode==='login'
+      ?await sb.auth.signInWithPassword({email,password})
+      :await sb.auth.signUp({email,password});
+
+    if(r.error){
+      console.error(r.error);
+      return setAuthMsg(r.error.message);
+    }
+
+    currentUser=r.data.user;
+
+    if(!currentUser){
+      return setAuthMsg('Login failed: user session was not created.');
+    }
+
+    if(mode==='signup'&&r.data.session){
+      await createWorkspace(
+        document.getElementById('workspaceName').value.trim()||'My Business'
+      );
+      hideAuth();
+    }else if(mode==='signup'){
+      setAuthMsg('Account created. Check your email if confirmation is required, then login.');
+    }else{
+      await loadProfile();
+      hideAuth();
+    }
+
+  }catch(err){
+    console.error(err);
+    setAuthMsg('Login error: '+(err.message||String(err)));
+  }
+}
 async function loadProfile(){
   if(!sb||!currentUser)return;
 
