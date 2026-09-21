@@ -16,7 +16,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script>
 const KEY="wa_accounting_v4";
 const CLOUD_KEY="wa_accounting_v5_cloud_config";
-let cloudConfig=JSON.parse(localStorage.getItem(CLOUD_KEY)||"null")||{url:"",key:""};
+let cloudConfig={url:"https://yhxhcslzrdsuaofsshop.supabase.co",key:"sb_publishable_CZ5Drzzb-c-9FAyQ3N2kFA_J-8AI6kP"};
 let sb=null,currentUser=null,currentProfile=null,workspaceId=localStorage.getItem("wa_workspace_id")||"";
 function cloudReady(){return !!(cloudConfig.url&&cloudConfig.key&&window.supabase)}
 function cloudInit(){try{if(cloudReady())sb=window.supabase.createClient(cloudConfig.url,cloudConfig.key,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}})}catch(e){sb=null}}
