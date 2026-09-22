@@ -169,5 +169,10 @@ document.querySelectorAll('.nav').forEach(b=>{
     }
   });
 });
-
+$('#menuBtn').onclick=()=>$('#sidebar').classList.toggle('open');
+window.addEventListener('hashchange',render);
+applyTheme();
+updateUserBar();
+render();
+initAuth();
 </script></body></html>
