@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Waqar Alvi | Finance & Accounting Professional</title>
+
+<meta name="description" content="Waqar Alvi - Finance and Accounting Professional, MBA Finance, Advanced Excel and Business Accounting.">
+<meta name="theme-color" content="#0b5ed7">
+
+<style>
+:root{
+  --blue:#0b5ed7;
+  --blue-dark:#073b8f;
+  --blue-light:#eaf3ff;
+  --white:#ffffff;
+  --bg:#f5f8fc;
+  --text:#172033;
+  --muted:#667085;
+  --border:#e1e8f0;
+  --shadow:0 12px 35px rgba(12,45,90,.08);
+  --radius:18px;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Inter,Segoe UI,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+.container{
+  width:min(1120px,92%);
+  margin:auto;
+}
+
+/* NAVIGATION */
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  z-index:1000;
+}
+
+.nav-inner{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-size:23px;
+  font-weight:800;
+  color:var(--blue);
+}
+
+.logo span{
+  color:var(--text);
+}
+
+.nav-links{
+  display:flex;
+  gap:26px;
+  align-items:center;
+}
+
+.nav-links a{
+  font-size:14px;
+  font-weight:600;
+  color:#475467;
+  transition:.2s;
+}
+
+.nav-links a:hover{
+  color:var(--blue);
+}
+
+.menu{
+  display:none;
+  border:0;
+  background:var(--blue);
+  color:white;
+  padding:8px 12px;
+  border-radius:8px;
+  font-size:20px;
+}
+
+/* HERO */
+
+.hero{
+  padding:145px 0 80px;
+  background:
+    radial-gradient(circle at 80% 20%,#dcecff 0,transparent 30%),
+    linear-gradient(180deg,#fff,#f5f8fc);
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+  gap:60px;
+  align-items:center;
+}
+
+.badge{
+  display:inline-block;
+  padding:7px 13px;
+  border-radius:30px;
+  background:var(--blue-light);
+  color:var(--blue);
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:18px;
+}
+
+.hero h1{
+  font-size:clamp(42px,6vw,70px);
+  line-height:1.05;
+  letter-spacing:-2px;
+  margin-bottom:16px;
+}
+
+.hero h1 span{
+  color:var(--blue);
+}
+
+.hero h2{
+  font-size:23px;
+  margin-bottom:15px;
+  color:#344054;
+}
+
+.hero p{
+  color:var(--muted);
+  max-width:650px;
+  font-size:17px;
+}
+
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:28px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:12px 20px;
+  border-radius:10px;
+  font-weight:700;
+  font-size:14px;
+  border:1px solid transparent;
+  transition:.2s;
+}
+
+.btn-primary{
+  background:var(--blue);
+  color:#fff;
+}
+
+.btn-primary:hover{
+  background:var(--blue-dark);
+  transform:translateY(-1px);
+}
+
+.btn-outline{
+  background:white;
+  color:var(--blue);
+  border-color:#bdd4f4;
+}
+
+.btn-outline:hover{
+  background:var(--blue-light);
+}
+
+/* PROFILE */
+
+.profile-card{
+  background:white;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  border-radius:24px;
+  padding:22px;
+  text-align:center;
+}
+
+.profile-card img{
+  width:250px;
+  height:250px;
+  object-fit:cover;
+  border-radius:22px;
+  margin:auto;
+  border:5px solid var(--blue-light);
+}
+
+.profile-card h3{
+  margin-top:18px;
+  font-size:22px;
+}
+
+.profile-card p{
+  font-size:14px;
+}
+
+/* SECTIONS */
+
+section{
+  padding:80px 0;
+}
+
+.section-head{
+  text-align:center;
+  margin-bottom:42px;
+}
+
+.section-head .small{
+  color:var(--blue);
+  font-size:13px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+}
+
+.section-head h2{
+  font-size:36px;
+  margin-top:5px;
+}
+
+.section-head p{
+  max-width:650px;
+  margin:10px auto 0;
+  color:var(--muted);
+}
+
+/* ABOUT */
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+.card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:28px;
+  box-shadow:var(--shadow);
+}
+
+.card h3{
+  margin-bottom:12px;
+  font-size:21px;
+}
+
+.card p{
+  color:var(--muted);
+}
+
+.info-list{
+  list-style:none;
+}
+
+.info-list li{
+  padding:12px 0;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  font-size:14px;
+}
+
+.info-list li:last-child{
+  border-bottom:0;
+}
+
+.info-list strong{
+  color:var(--text);
+}
+
+/* SKILLS */
+
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.skill{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:22px;
+  box-shadow:var(--shadow);
+}
+
+.skill-icon{
+  width:45px;
+  height:45px;
+  border-radius:12px;
+  background:var(--blue-light);
+  color:var(--blue);
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  margin-bottom:13px;
+}
+
+.skill h3{
+  font-size:17px;
+  margin-bottom:6px;
+}
+
+.skill p{
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* EXCEL */
+
+.excel{
+  background:#fff;
+}
+
+.excel-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.excel-card{
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:15px;
+  padding:22px;
+}
+
+.excel-card h3{
+  margin-bottom:8px;
+}
+
+.excel-card p{
+  color:var(--muted);
+  font-size:13px;
+}
+
+.excel-card a{
+  display:inline-block;
+  margin-top:15px;
+  color:var(--blue);
+  font-weight:700;
+  font-size:13px;
+}
+
+/* FILES */
+
+.files-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.file{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  background:white;
+  border:1px solid var(--border);
+  padding:20px;
+  border-radius:14px;
+}
+
+.file strong{
+  font-size:14px;
+}
+
+.file small{
+  display:block;
+  color:var(--muted);
+  margin-top:3px;
+}
+
+/* CONTACT */
+
+.contact{
+  background:linear-gradient(135deg,#071d42,#0b5ed7);
+  color:white;
+}
+
+.contact .section-head .small{
+  color:#bcd7ff;
+}
+
+.contact .section-head h2{
+  color:white;
+}
+
+.contact .section-head p{
+  color:#d8e7ff;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.contact-card{
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:16px;
+  padding:24px;
+  text-align:center;
+}
+
+.contact-card h3{
+  margin-bottom:5px;
+}
+
+.contact-card p{
+  color:#dbe8ff;
+  font-size:14px;
+}
+
+.contact-card a{
+  color:white;
+  font-weight:700;
+}
+
+/* FOOTER */
+
+footer{
+  background:#06152e;
+  color:#b8c8df;
+  padding:25px 0;
+  text-align:center;
+  font-size:13px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  .nav-links{
+    position:absolute;
+    top:72px;
+    left:0;
+    width:100%;
+    background:white;
+    display:none;
+    flex-direction:column;
+    align-items:flex-start;
+    padding:20px 5%;
+    border-bottom:1px solid var(--border);
+  }
+
+  .nav-links.open{
+    display:flex;
+  }
+
+  .menu{
+    display:block;
+  }
+
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .profile-card{
+    max-width:400px;
+    margin:auto;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
+  }
+
+  .skills-grid,
+  .excel-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:600px){
+
+  .hero{
+    padding-top:120px;
+  }
+
+  .hero h1{
+    font-size:43px;
+  }
+
+  .hero h2{
+    font-size:19px;
+  }
+
+  section{
+    padding:60px 0;
+  }
+
+  .section-head h2{
+    font-size:29px;
+  }
+
+  .skills-grid,
+  .excel-grid,
+  .files-grid{
+    grid-template-columns:1fr;
+  }
+
+  .profile-card img{
+    width:210px;
+    height:210px;
+  }
+
+  .file{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .file .btn{
+    width:100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="container nav-inner">
+
+    <div class="logo">
+      Waqar <span>Alvi</span>
+    </div>
+
+    <button class="menu" onclick="toggleMenu()">☰</button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#excel">Excel</a>
+      <a href="#files">Files</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+  <div class="container hero-grid">
+
+    <div>
+
+      <span class="badge">Finance & Accounting Professional</span>
+
+      <h1>
+        Waqar <span>Alvi</span>
+      </h1>
+
+      <h2>
+        MBA Finance | Accounting | Advanced Excel
+      </h2>
+
+      <p>
+        I am a finance and accounting professional with an MBA in Finance,
+        focused on business accounting, financial reporting, inventory
+        management and advanced Excel solutions.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a class="btn btn-primary" href="CV.pdf" download>
+          ↓ Download CV
+        </a>
+
+        <a class="btn btn-outline" href="#contact">
+          Contact Me
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="profile-card">
+
+      <img src="profile.jpg" alt="Waqar Alvi">
+
+      <h3>Waqar Alvi</h3>
+
+      <p>
+        Finance & Accounting Professional
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="small">About Me</div>
+      <h2>Professional Profile</h2>
+      <p>
+        A finance-focused professional with practical interest in
+        accounting, reporting, Excel and business management.
+      </p>
+    </div>
+
+
+    <div class="about-grid">
+
+      <div class="card">
+
+        <h3>About Me</h3>
+
+        <p>
+          I'm 32 years old and I have completed MBA in Finance.
+          My professional interests include finance, accounting,
+          business reporting, inventory management and data analysis.
+        </p>
+
+        <br>
+
+        <p>
+          I also work extensively with Microsoft Excel and advanced
+          spreadsheet techniques to organize, analyze and present
+          business information.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>Personal Information</h3>
+
+        <ul class="info-list">
+
+          <li>
+            <span>Name</span>
+            <strong>Waqar Alvi</strong>
+          </li>
+
+          <li>
+            <span>Field</span>
+            <strong>Finance & Accounting</strong>
+          </li>
+
+          <li>
+            <span>Education</span>
+            <strong>MBA Finance</strong>
+          </li>
+
+          <li>
+            <span>Age</span>
+            <strong>32 Years</strong>
+          </li>
+
+          <li>
+            <span>Specialization</span>
+            <strong>Advanced Excel</strong>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="small">Expertise</div>
+      <h2>Professional Skills</h2>
+    </div>
+
+
+    <div class="skills-grid">
+
+      <div class="skill">
+        <div class="skill-icon">₨</div>
+        <h3>Financial Accounting</h3>
+        <p>
+          Accounting records, financial statements, reporting
+          and business financial information.
+        </p>
+      </div>
+
+
+      <div class="skill">
+        <div class="skill-icon">EX</div>
+        <h3>Advanced Excel</h3>
+        <p>
+          Advanced formulas, data analysis, dashboards and
+          professional spreadsheet solutions.
+        </p>
+      </div>
+
+
+      <div class="skill">
+        <div class="skill-icon">VL</div>
+        <h3>VLOOKUP & XLOOKUP</h3>
+        <p>
+          Lookup formulas for combining, searching and analyzing
+          business datasets.
+        </p>
+      </div>
+
+
+      <div class="skill">
+        <div class="skill-icon">PT</div>
+        <h3>Pivot Tables</h3>
+        <p>
+          Interactive data summaries, analysis and management
+          reporting using Pivot Tables.
+        </p>
+      </div>
+
+
+      <div class="skill">
+        <div class="skill-icon">IN</div>
+        <h3>Inventory Management</h3>
+        <p>
+          Inventory records, stock analysis, reporting and
+          business inventory control.
+        </p>
+      </div>
+
+
+      <div class="skill">
+        <div class="skill-icon">FR</div>
+        <h3>Financial Reporting</h3>
+        <p>
+          Professional financial reports and business performance
+          analysis.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- EXCEL -->
+<section class="excel" id="excel">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="small">Microsoft Excel</div>
+      <h2>Advanced Excel Capabilities</h2>
+      <p>
+        Practical Excel work including formulas, reports,
+        inventory, finance and Pivot Table analysis.
+      </p>
+    </div>
+
+
+    <div class="excel-grid">
+
+      <div class="excel-card">
+        <h3>VLOOKUP</h3>
+        <p>
+          Professional lookup and data-matching solutions.
+        </p>
+        <a href="vlookup.mp4" target="_blank">
+          Watch Demo →
+        </a>
+      </div>
+
+
+      <div class="excel-card">
+        <h3>Pivot Tables</h3>
+        <p>
+          Business data analysis and interactive reporting.
+        </p>
+        <a href="pivot-table-excel.mp4" target="_blank">
+          Watch Demo →
+        </a>
+      </div>
+
+
+      <div class="excel-card">
+        <h3>Salary Filtering</h3>
+        <p>
+          Advanced filtering and employee salary data analysis.
+        </p>
+        <a href="Salary-Filtering.mp4" target="_blank">
+          Watch Demo →
+        </a>
+      </div>
+
+
+      <div class="excel-card">
+        <h3>Inventory Reports</h3>
+        <p>
+          Professional inventory and stock reporting workbooks.
+        </p>
+        <a href="Corporate_Grey_Yarn_Inventory.xlsx" download>
+          Download File →
+        </a>
+      </div>
+
+
+      <div class="excel-card">
+        <h3>Financial Reports</h3>
+        <p>
+          Business financial reporting and analysis workbook.
+        </p>
+        <a href="Corporate_Weaving_Financial.xlsx" download>
+          Download File →
+        </a>
+      </div>
+
+
+      <div class="excel-card">
+        <h3>Contract Reports</h3>
+        <p>
+          Professional contract and business data reporting.
+        </p>
+        <a href="Corporate_Weaving_Contracts.xlsx" download>
+          Download File →
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FILES -->
+<section id="files">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="small">Downloads</div>
+      <h2>My Work & Resources</h2>
+      <p>
+        Download selected Excel projects and professional documents.
+      </p>
+    </div>
+
+
+    <div class="files-grid">
+
+      <div class="file">
+        <div>
+          <strong>Professional CV</strong>
+          <small>Waqar Alvi CV.pdf</small>
+        </div>
+
+        <a class="btn btn-primary" href="CV.pdf" download>
+          Download
+        </a>
+      </div>
+
+
+      <div class="file">
+        <div>
+          <strong>Corporate Vendor Ledger</strong>
+          <small>Advanced Excel workbook</small>
+        </div>
+
+        <a class="btn btn-primary"
+           href="Advanced_Corporate_Vendor_Ledger_Master_FIXED.xlsx"
+           download>
+          Download
+        </a>
+      </div>
+
+
+      <div class="file">
+        <div>
+          <strong>Grey Yarn Inventory</strong>
+          <small>Corporate inventory workbook</small>
+        </div>
+
+        <a class="btn btn-primary"
+           href="Corporate_Grey_Yarn_Inventory.xlsx"
+           download>
+          Download
+        </a>
+      </div>
+
+
+      <div class="file">
+        <div>
+          <strong>Weaving Financial Report</strong>
+          <small>Corporate financial workbook</small>
+        </div>
+
+        <a class="btn btn-primary"
+           href="Corporate_Weaving_Financial.xlsx"
+           download>
+          Download
+        </a>
+      </div>
+
+
+      <div class="file">
+        <div>
+          <strong>Weaving Contracts</strong>
+          <small>Corporate contracts workbook</small>
+        </div>
+
+        <a class="btn btn-primary"
+           href="Corporate_Weaving_Contracts.xlsx"
+           download>
+          Download
+        </a>
+      </div>
+
+
+      <div class="file">
+        <div>
+          <strong>Weaving Profit & Loss</strong>
+          <small>Financial analysis workbook</small>
+        </div>
+
+        <a class="btn btn-primary"
+           href="Corporate_Weaving_Profile_Loss.xlsx"
+           download>
+          Download
+        </a>
+      </div>
+
+
+      <div class="file">
+        <div>
+          <strong>Inventory Pivot Report</strong>
+          <small>Pivot Table analysis</small>
+        </div>
+
+        <a class="btn btn-primary"
+           href="Grey_Yarn_Inventory_Pivot_Table_Report.xlsx"
+           download>
+          Download
+        </a>
+      </div>
+
+
+      <div class="file">
+        <div>
+          <strong>Financial Pivot Report</strong>
+          <small>Pivot Table financial analysis</small>
+        </div>
+
+        <a class="btn btn-primary"
+           href="Weaving_Financial_Pivot_Table_Report.xlsx"
+           download>
+          Download
+        </a>
+      </div>
+
+
+      <div class="file">
+        <div>
+          <strong>Contract Pivot Report</strong>
+          <small>Pivot Table contract analysis</small>
+        </div>
+
+        <a class="btn btn-primary"
+           href="Weaving_Contract_Pivot_Table_Report-1.xlsx"
+           download>
+          Download
+        </a>
+      </div>
+
+
+      <div class="file">
+        <div>
+          <strong>Loss Pivot Report</strong>
+          <small>Pivot Table loss analysis</small>
+        </div>
+
+        <a class="btn btn-primary"
+           href="Weaving_Loss_Pivot_Table_Report.xlsx"
+           download>
+          Download
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="small">Get In Touch</div>
+
+      <h2>Let's Connect</h2>
+
+      <p>
+        For professional opportunities, accounting work,
+        Excel projects or collaboration.
+      </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <h3>WhatsApp</h3>
+        <p>Contact me directly</p>
+
+        <!-- Apna WhatsApp number yahan add karein -->
+        <a href="#" onclick="alert('WhatsApp number is not configured yet.');return false;">
+          Open WhatsApp
+        </a>
+      </div>
+
+
+      <div class="contact-card">
+        <h3>LinkedIn</h3>
+        <p>Professional profile</p>
+
+        <!-- Apna LinkedIn URL yahan add karein -->
+        <a href="#" onclick="alert('LinkedIn link is not configured yet.');return false;">
+          View LinkedIn
+        </a>
+      </div>
+
+
+      <div class="contact-card">
+        <h3>Email</h3>
+        <p>Professional communication</p>
+
+        <!-- Apna email yahan add karein -->
+        <a href="#" onclick="alert('Email is not configured yet.');return false;">
+          Send Email
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="container">
+    © <span id="year"></span> Waqar Alvi. All Rights Reserved.
+  </div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+  const nav = document.getElementById("navLinks");
+
+  nav.classList.toggle("open");
+
+}
+
+
+document.querySelectorAll(".nav-links a").forEach(function(link){
+
+  link.addEventListener("click",function(){
+
+    document.getElementById("navLinks").classList.remove("open");
+
+  });
+
+});
+
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+  </html>
