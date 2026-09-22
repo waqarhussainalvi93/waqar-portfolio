@@ -65,7 +65,15 @@ async function submitAuth(e){
       showAuth();
       setAuthMsg('Account created. Check your email if confirmation is required, then login.');
     }else{
-      loadProfile().catch(err=>console.error('Profile load error:',err));
+      loadProfile()
+  .then(()=>{
+    console.log('PROFILE LOADED');
+    updateUserBar();
+  })
+  .catch(err=>{
+    console.error('Profile load error:',err);
+    setAuthMsg('Profile error: '+(err.message||String(err)));
+  });
     }
 
   }catch(err){
